@@ -214,17 +214,21 @@ input[type=number]::-webkit-inner-spin-button {
   }
 
 @media only screen and (max-width: 600px) {
- .Box-Of-Calc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    height: 100vh;
+  .Box-Of-Calc {
+    height: auto;
+    padding: 20px;
+  }
+
+  .calc-section {
     width: 100%;
-}
+    margin: 0;
+  }
+
+  .result-section {
+    margin-left: 0;
+  }
+
+  button {
+    width: 100%;
+  }
 }
