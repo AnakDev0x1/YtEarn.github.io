@@ -219,5 +219,15 @@ input[type=number]::-webkit-inner-spin-button {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-   }
+    }
+        .container {
+   width: 100%;
+   max-width: 450px;
+   margin: 0 auto; // for center box if you want
+}
   }
+@media(max-width: 767px) {
+   .container {
+      max-width: 320px;
+   }
+}
