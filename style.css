@@ -1,174 +1,92 @@
-
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: "Poppins", sans-serif;
-}
-
-
-
-.area{
-    background: rgb(0,107,255);
     background: linear-gradient(180deg, rgba(0,107,255,1) 0%, rgba(0,12,255,1) 100%);
-    width: 100%;
-    height:100vh;
-    position: relative;
-   
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.circles{
-    position: absolute;
-    top: 0;
-    left: 0;
+.area {
+    position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-.circles li{
+.circles li {
     position: absolute;
     display: block;
     list-style: none;
-    width: 20px;
-    height: 20px;
     background: rgba(255, 255, 255, 0.2);
-    animation: animate 25s linear infinite;
     bottom: -150px;
-    
+    animation: animate 25s linear infinite;
+    border-radius: 50%;
 }
 
-.circles li:nth-child(1){
-    left: 25%;
-    width: 80px;
-    height: 80px;
-    animation-delay: 0s;
-}
-
-
-.circles li:nth-child(2){
-    left: 10%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 2s;
-    animation-duration: 12s;
-}
-
-.circles li:nth-child(3){
-    left: 70%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 4s;
-}
-
-.circles li:nth-child(4){
-    left: 40%;
-    width: 60px;
-    height: 60px;
-    animation-delay: 0s;
-    animation-duration: 18s;
-}
-
-.circles li:nth-child(5){
-    left: 65%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 0s;
-}
-
-.circles li:nth-child(6){
-    left: 75%;
-    width: 110px;
-    height: 110px;
-    animation-delay: 3s;
-}
-
-.circles li:nth-child(7){
-    left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
-}
-
-.circles li:nth-child(8){
-    left: 50%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 15s;
-    animation-duration: 45s;
-}
-
-.circles li:nth-child(9){
-    left: 20%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 2s;
-    animation-duration: 35s;
-}
-
-.circles li:nth-child(10){
-    left: 85%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-
-
+/* Circle Sizes and Positions */
+.circles li:nth-child(1) { left: 25%; width: 5rem; height: 5rem; animation-delay: 0s; }
+.circles li:nth-child(2) { left: 10%; width: 1.25rem; height: 1.25rem; animation-delay: 2s; animation-duration: 12s; }
+.circles li:nth-child(3) { left: 70%; width: 1.25rem; height: 1.25rem; animation-delay: 4s; }
+.circles li:nth-child(4) { left: 40%; width: 3.75rem; height: 3.75rem; animation-delay: 0s; animation-duration: 18s; }
+.circles li:nth-child(5) { left: 65%; width: 1.25rem; height: 1.25rem; animation-delay: 0s; }
+.circles li:nth-child(6) { left: 75%; width: 6.875rem; height: 6.875rem; animation-delay: 3s; }
+.circles li:nth-child(7) { left: 35%; width: 9.375rem; height: 9.375rem; animation-delay: 7s; }
+.circles li:nth-child(8) { left: 50%; width: 1.5625rem; height: 1.5625rem; animation-delay: 15s; animation-duration: 45s; }
+.circles li:nth-child(9) { left: 20%; width: 0.9375rem; height: 0.9375rem; animation-delay: 2s; animation-duration: 35s; }
+.circles li:nth-child(10){ left: 85%; width: 9.375rem; height: 9.375rem; animation-delay: 0s; animation-duration: 11s; }
 
 @keyframes animate {
-
-    0%{
+    0% {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
-        border-radius: 0;
     }
-
-    100%{
+    100% {
         transform: translateY(-1000px) rotate(720deg);
         opacity: 0;
-        border-radius: 50%;
     }
-
 }
 
 .Box-Of-Calc {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    height: 100vh;
-    width: 100%;
+    z-index: 1;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.calc-section {
-background-color: #ffffff;
-padding: 20px;
-border-radius: 12px;
+.calc-section, .result-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
 }
 
 h1 {
-    color: rgb(0,107,255);
-    color: linear-gradient(180deg, rgba(0,107,255,1) 0%, rgba(0,12,255,1) 100%);
-    margin-bottom: 10px;
+    color: rgba(0,12,255,1);
+    margin-bottom: 0.625rem;
+    text-align: center;
 }
 
 input {
     border: none;
     outline: none;
-    padding: 5px;
+    padding: 0.3125rem;
     border-bottom: 1px solid rgb(236, 236, 236);
     font-family: "Poppins", sans-serif;
-    font-size: 1.2rem;
-    margin-bottom: 9px;
+    font-size: 1rem;
+    margin-bottom: 0.5625rem;
+    width: 100%;
 }
 
 button {
@@ -176,11 +94,12 @@ button {
     color: white;
     border: none;
     width: 100%;
-    height: 45px;
+    height: 2.8125rem;
     font-family: "Poppins", sans-serif;
-    font-size: 1.5rem;
-    border-radius: 7px;
+    font-size: 1rem;
+    border-radius: 0.4375rem;
     transition: background-color 0.3s;
+    margin-top: 0.625rem;
 }
 
 button:hover {
@@ -189,11 +108,8 @@ button:hover {
 }
 
 .result-section {
-    background-color: #09032b;
+    background-color: rgba(9, 3, 43, 0.9);
     color: white;
-    padding: 20px;
-    border-radius: 12px;
-    margin-left: 10px;
 }
 
 #result {
@@ -201,33 +117,26 @@ button:hover {
 }
 
 .final-payout {
-    margin-top: 4px;
+    margin-top: 0.25rem;
     font-size: 1.3rem;
 }
 
 h5 {
-    margin-top: 20px;
+    margin-top: 1.25rem;
+    text-align: center;
 }
 
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
-  }
-
-@media only screen and (max-width: 600px) {
-    .Box-Of-Calc {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-        .container {
-   width: 100%;
-   max-width: 450px;
-   margin: 0 auto; // for center box if you want
 }
-  }
-@media(max-width: 767px) {
-   .container {
-      max-width: 320px;
-   }
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .Box-Of-Calc {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .calc-section, .result-section {
+        width: 48%;
+    }
 }
